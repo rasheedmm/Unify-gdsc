@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color"
+    tools:context=".EditProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratextrabold"
+            android:text="Write Us"
+            android:gravity="center"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/text_color_white"
+            android:textSize="20sp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/montserratregular"
+                android:text="Full Name"
+                android:textColor="@color/text_color_white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserratmedium"
+                android:hint="Enter Name"
+                android:textSize="15sp"
+                android:paddingVertical="5dp"
+                android:singleLine="true"
+                android:textColor="@color/text_color_white"
+                android:textColorHint="@color/text_color_white"
+                android:textCursorDrawable="@drawable/edittext_cursor" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/profile_view_color" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/montserratregular"
+                android:text="Contact Info"
+                android:textColor="@color/text_color_white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserratmedium"
+                android:hint="E mail id, contact number"
+                android:paddingVertical="5dp"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:textColor="@color/text_color_white"
+                android:textColorHint="@color/text_color_white"
+                android:textCursorDrawable="@drawable/edittext_cursor" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/profile_view_color" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/montserratregular"
+                android:text="Bug/Feedaback/Suggestions"
+                android:textColor="@color/text_color_white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserratmedium"
+                android:hint="Enter details"
+                android:maxLines="10"
+                android:textSize="15sp"
+                android:inputType="textMultiLine"
+                android:paddingVertical="5dp"
+                android:singleLine="true"
+                android:textColor="@color/text_color_white"
+                android:textColorHint="@color/text_color_white"
+                android:textCursorDrawable="@drawable/edittext_cursor" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/profile_view_color" />
+
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_stroked"
+            android:elevation="17dp"
+            android:gravity="center"
+            android:text="Submit"
+            android:textColor="@color/text_color_white"
+            android:transitionName="transition_next"></androidx.appcompat.widget.AppCompatButton>
+
+    </LinearLayout>
+
+</ScrollView>

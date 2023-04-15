@@ -1,0 +1,27 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
+
+    }
+}
+rootProject.name = "My Application"
+include ':app'

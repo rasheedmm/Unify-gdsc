@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color"
+    tools:context="com.nexus.unify.SwipeNewFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+   <com.facebook.shimmer.ShimmerFrameLayout
+       android:id="@+id/shimmer_view_container"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:layout_marginTop="15dp"
+       android:layout_centerInParent="true"
+       android:orientation="vertical"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:shimmer_duration="800">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+
+          android:orientation="vertical">
+         <include layout="@layout/data_placeholder_layout_swipe" />
+
+      </LinearLayout>
+
+   </com.facebook.shimmer.ShimmerFrameLayout>
+   <com.yuyakaido.android.cardstackview.CardStackView
+       android:id="@+id/cardStackView1"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginStart="10dp"
+       android:layout_marginEnd="10dp"
+       tools:listitem="@layout/item_card"
+      ></com.yuyakaido.android.cardstackview.CardStackView>
+</RelativeLayout>

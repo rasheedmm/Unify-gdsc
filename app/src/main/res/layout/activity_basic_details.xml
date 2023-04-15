@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color"
+    tools:context=".BasicDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="160dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Basics"
+            android:fontFamily="@font/montserratmedium"
+            android:textColor="@color/text_color_white"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Introduce, \nYourSelf"
+            android:textColor="@color/text_color_white"
+            android:textSize="27sp"
+            android:fontFamily="@font/montserratsemibold"
+            android:textStyle="bold"></TextView>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/montserratmedium"
+                android:text="Full Name"
+                android:textColor="@color/text_color_white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserratmedium"
+                android:hint="Enter Name"
+                android:paddingVertical="5dp"
+                android:singleLine="true"
+
+                android:textColor="@color/text_color_white"
+                android:textColorHint="@color/text_color_white"
+                android:textCursorDrawable="@drawable/edittext_cursor" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/profile_view_color" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/montserratmedium"
+                android:text="User Name"
+                android:textColor="@color/text_color_white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextUName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="@font/montserratmedium"
+                android:hint="Enter UserName"
+                android:paddingVertical="5dp"
+                android:singleLine="true"
+
+                android:textColor="@color/text_color_white"
+                android:textColorHint="@color/text_color_white"
+                android:textCursorDrawable="@drawable/edittext_cursor" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/profile_view_color" />
+
+        </LinearLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_clg"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/app_color"
+            android:backgroundTint="@color/app_color"
+            app:boxBackgroundColor="@color/app_color"
+            android:textColorHint="@color/text_color_white"
+            android:layout_marginRight="8dp"
+            android:outlineAmbientShadowColor="@color/hint_text"
+            app:hintTextColor="@color/text_color_white"
+            app:endIconTint="@color/text_color_white"
+            app:startIconTint="@color/text_color_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/education_svgrepo_com">
+
+            <AutoCompleteTextView
+                android:id="@+id/crs"
+                android:textColorHint="@color/text_color_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Course"
+                android:fontFamily="@font/montserratmedium"
+                android:inputType="none"
+                android:textColor="@color/text_color_white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_dep"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"
+            app:boxBackgroundColor="@color/app_color"
+            android:layout_marginRight="8dp"
+            app:endIconTint="@color/text_color_white"
+            app:startIconTint="@color/text_color_white"
+            android:textColorHint="@color/text_color_white"
+            app:hintTextColor="@color/text_color_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/category_svgrepo_com__1_">
+
+            <AutoCompleteTextView
+                android:id="@+id/deprts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Department"
+                android:inputType="none"
+                android:fontFamily="@font/montserratmedium"
+                android:textColor="@color/text_color_white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_i_am"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"
+            app:boxBackgroundColor="@color/app_color"
+            android:layout_marginRight="8dp"
+            app:endIconTint="@color/text_color_white"
+            app:startIconTint="@color/text_color_white"
+            android:textColorHint="@color/text_color_white"
+            app:hintTextColor="@color/text_color_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/category_svgrepo_com__1_">
+
+            <AutoCompleteTextView
+                android:id="@+id/i_am"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="I am a"
+                android:inputType="none"
+                android:fontFamily="@font/montserratmedium"
+                android:textColor="@color/text_color_white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/ll_next"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_stroke_only"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="27dp"
+                    android:src="@drawable/ic_baseline_navigate_next_24"
+                    android:tint="@color/text_color_white"></ImageView>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

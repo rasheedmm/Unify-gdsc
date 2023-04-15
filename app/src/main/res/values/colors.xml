@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#18181a</color>
+    <color name="purple_700">#151516</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+
+
+    //custom colors
+    <color name="app_color">#101010</color>
+    <color name="light_bg">#18181C</color>
+    <color name="blue_main">#6177F3</color>
+    <color name="blue_icon">#CDE9FF</color>
+    <color name="searchbar_color">#0D0E0F</color>
+    <color name="dark_blue">#0188D1</color>
+    <color name="hint_text">#DAFFFFFF</color>
+    <color name="text_color">#363e3f</color>
+    <color name="text_color_white">#DAE5EA</color>
+
+    <color name="icon_color">#9E9FA0</color>
+    <color name="bg_rate_selected">#F8F8F8</color>
+    <color name="transparent">#00000000</color>
+    <color name="profile_view_color">#383B41</color>
+    <color name="grey_icon">#D3D3D3</color>
+    <color name="textcolor">#363e3f</color>
+    <color name="background">#dddddd</color>
+    <color name="loading_clr">#636363</color>
+
+    <color name="green">#00ff00</color>
+    <color name="grey">#757575</color>
+    <color name="blue">#00FFFF</color>
+</resources>

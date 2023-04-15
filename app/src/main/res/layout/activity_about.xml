@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AboutActivity"
+    android:background="@color/app_color"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About Lattice TKMCE App"
+            android:textSize="20sp"
+            android:textColor="@color/text_color_white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_white"
+            android:text="Lattice Connection-Making App is designed to help students at TKMCE, build meaningful connections with their peers. Whether it's finding a study partner, forming a club, or just making new friends, our app is the perfect platform to connect with others and enhance your college experience."
+            android:textSize="16sp"
+            android:paddingTop="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_white"
+            android:text="Our team of dedicated students and staff at TKMCE has worked tirelessly to create a user-friendly and engaging platform for our college community. Our goal is to foster a sense of community and support for all students and help them make the most of their time at TKMCE."
+            android:textSize="16sp"
+            android:paddingTop="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_white"
+            android:text="We are committed to privacy and security, and all user information is protected by the highest standards of data protection. Our team is always working to improve the app and add new features to make it even easier to connect with others at TKMCE."
+            android:textSize="16sp"
+            android:paddingTop="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_white"
+            android:text="One of the unique features of our app is the ability to find students based on your interests. Whether you're interested in coding, sports, music, dance or volunteering, there's something for everyone on our platform."
+            android:textSize="16sp"
+            android:paddingTop="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_white"
+            android:text="If you have any suggentions our feedback feel free to contact us."
+            android:textSize="16sp"
+            android:paddingTop="16dp"/>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,10 @@
+<defaults>
+    <entry>
+        <key>test</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>swipe_limit</key>
+        <value></value>
+    </entry>
+</defaults>
