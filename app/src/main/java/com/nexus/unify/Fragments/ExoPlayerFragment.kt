@@ -102,12 +102,13 @@ class ExoPlayerFragment(
         }
 
         if (videoPath.type.equals("video")) {
-
+            Toast.makeText(context, "videoo", Toast.LENGTH_SHORT).show()
             initializePlayer()
             viewBinding!!.Imgbg.visibility = GONE
             viewBinding!!.playerView.visibility = VISIBLE
         }
         if (videoPath.type.equals("image")) {
+            Toast.makeText(context, "image", Toast.LENGTH_SHORT).show()
             viewBinding!!.playerView.visibility = GONE
             viewBinding!!.Imgbg.visibility = VISIBLE
 

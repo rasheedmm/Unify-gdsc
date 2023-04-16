@@ -37,15 +37,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-//        if (position % 2 == 0) {
+//                     if (position % 2 == 0) {
 //            return 0;
 //        }
 //        return 1;
 
         if (moviesList.get(position).getType().equals("image")) {
             return 1;
+        }else {
+            return 0;
+
         }
-        return 0;
+
     }
 
     @NonNull
