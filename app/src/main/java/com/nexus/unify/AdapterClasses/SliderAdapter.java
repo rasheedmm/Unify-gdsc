@@ -105,9 +105,9 @@ setAnimation(holder.click,position);
          }
             if (sliderItem.getUsername().equals("null")) {
 
-                click.setText("View More");
+                click.setText("Featured Store");
             } else {
-                click.setText("View Profile");
+                click.setText("View Store");
             }
 
         }

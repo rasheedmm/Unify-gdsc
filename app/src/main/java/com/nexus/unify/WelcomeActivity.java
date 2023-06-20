@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -57,7 +58,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
                                 Log.e(TAG, "my referLink = " + deepLink.toString());
 
-
+                                //  Toast.makeText(WelcomeActivity.this, ""+deepLink, Toast.LENGTH_LONG).show();
                                 //we will get this link
                                 // https://www.bncodeing.com/cust_id=cust123-prod345"
 
@@ -69,10 +70,11 @@ public class WelcomeActivity extends AppCompatActivity {
                                     String custid = refferlinkGet.substring(0, refferlinkGet.indexOf("-"));
                                     String prodid = refferlinkGet.substring(refferlinkGet.indexOf("-") + 1);
 
-                                    Log.e(TAG, "===cust_id = " + custid + "--------- ProductId ==== " + prodid);
+                                    SharedPreferences.Editor editor = getSharedPreferences("MY", MODE_PRIVATE).edit();
+                                    editor.putString("custid", custid);
+                                    editor.putString("postid", prodid);
 
-                                    Toast.makeText(WelcomeActivity.this, "cust id = " + custid + "podduct id = " + prodid, Toast.LENGTH_LONG).show();
-
+                                  startActivity(new Intent(WelcomeActivity.this,SharedActivity.class));
                                     //shareprefarace for save data
 
                                 } catch (Exception e) {
@@ -95,20 +97,19 @@ public class WelcomeActivity extends AppCompatActivity {
                             Log.e(TAG, "getDynamicLink:onFailure", e);
                         }
                     });
-            FirebaseMessaging.getInstance ().getToken ()
-                    .addOnCompleteListener ( task -> {
-                        if (!task.isSuccessful ()) {
+            FirebaseMessaging.getInstance().getToken()
+                    .addOnCompleteListener(task -> {
+                        if (!task.isSuccessful()) {
                             //Could not get FirebaseMessagingToken
                             return;
                         }
-                        if (null != task.getResult ()) {
+                        if (null != task.getResult()) {
                             //Got FirebaseMessagingToken
-                            String firebaseMessagingToken = Objects.requireNonNull (task.getResult());
+                            String firebaseMessagingToken = Objects.requireNonNull(task.getResult());
                             //Use firebaseMessagingToken further
                             Util.updateDeviceToken(WelcomeActivity.this, firebaseMessagingToken);
                         }
-                    } );
-
+                    });
 
 
             goToNextActivity();

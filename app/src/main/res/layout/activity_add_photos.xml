@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_color"
-    tools:context=".BasicDetailsActivity">
+    android:background="@color/app_white"
+    tools:context=".AddPhotosActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Photos"
+            android:text=""
             android:fontFamily="@font/montserratmedium"
             android:textColor="@color/text_color_white"
             android:textSize="17sp"></TextView>
@@ -26,8 +26,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserratmedium"
-            android:text="Let Us \n See You"
-            android:textColor="@color/text_color_white"
+            android:text="Upload \nStore Logo"
+            android:textColor="@color/text_color"
             android:textSize="22sp"
             android:textStyle="bold"></TextView>
 
@@ -62,6 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:visibility="gone"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_stroke_only"
@@ -86,8 +87,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="6dp"
-            android:text="Upload one photo and an avatar of yourself this photo will be visible to your matches. If you have privacy concerns, then you can add an alternative cover image."
-            android:textColor="@color/text_color_white"
+            android:text="Upload your store logo to identify you"
+            android:textColor="@color/text_color"
             android:fontFamily="@font/montserratmedium"
             android:textSize="12sp"></TextView>
 

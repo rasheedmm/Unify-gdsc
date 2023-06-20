@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.content.IntentSender;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+
 
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.Task;
@@ -26,6 +28,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.nexus.unify.Fragments.FeedFragment;
 import com.nexus.unify.Fragments.HomeNewFragment;
 import com.nexus.unify.Fragments.LikeFragment;
 import com.nexus.unify.Fragments.MyProfileFragment;
@@ -40,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
     int EDITED_IMAGE_RESULT_CODE = 200;
     FirebaseDatabase database;
     FirebaseUser firebaseUser;
-    AppUpdateManager appUpdateManager;
+
     GoogleSignInClient googleSignInClient;
 
     @Override
@@ -50,34 +53,15 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         database = FirebaseDatabase.getInstance();
-  //   getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        //   getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        appUpdateManager = AppUpdateManagerFactory.create(HomeActivity.this);
+
 
 // Returns an intent object that you use to check for an update.
-        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+
 
 // Checks that the platform will allow the specified type of update.
-        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                    // This example applies an immediate update. To apply a flexible update
-                    // instead, pass in AppUpdateType.FLEXIBLE
-                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
-                try {
-                    appUpdateManager.startUpdateFlowForResult(
-                            // Pass the intent that is returned by 'getAppUpdateInfo()'.
-                            appUpdateInfo,
-                            // Or 'AppUpdateType.FLEXIBLE' for flexible updates.
-                            AppUpdateType.IMMEDIATE,
-                            // The current activity making the update request.
-                            this,
-                            // Include a request code to later monitor this update request.
-                            100);
-                } catch (IntentSender.SendIntentException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("profiles").child(firebaseUser.getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -106,7 +90,7 @@ public class HomeActivity extends AppCompatActivity {
                 Fragment fragment = null;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        fragment = new SwipeNewFragment();
+                        fragment = new FeedFragment();
 
                         break;
 
@@ -115,15 +99,14 @@ public class HomeActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_like:
-         fragment = new LikeFragment();
+                        fragment = new LikeFragment();
                         break;
 
                     case R.id.nav_shop:
-                   fragment = new MyProfileFragment();
+                        fragment = new MyProfileFragment();
                         break;
                     case R.id.nav_add:
-
-                       startActivity(new Intent(HomeActivity.this, MainChatsActivity.class));
+                       startActivity(new Intent(HomeActivity.this,UploadVideoActivity.class));
                         break;
 
                 }
@@ -138,17 +121,7 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-     /*   if (requestCode == PICK_IMAGE) {
-            if(data.getData()!=null) {
-                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
-                intent.setData(data.getData());
-                startActivity(intent);
-            }
-        }*/
+
+
+
     }
-
-
-}

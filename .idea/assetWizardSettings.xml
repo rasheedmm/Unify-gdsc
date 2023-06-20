@@ -102,8 +102,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\rashe\Downloads\logo.jpg" />
-                                                <entry key="scalingPercent" value="121" />
+                                                <entry key="imagePath" value="C:\Users\rashe\Downloads\Artboard 1.png" />
+                                                <entry key="scalingPercent" value="63" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -136,8 +136,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="675cff" />
-                                      <entry key="foregroundAssetType" value="CLIP_ART" />
+                                      <entry key="backgroundColor" value="e8e9ff" />
                                     </map>
                                   </option>
                                 </PersistentState>

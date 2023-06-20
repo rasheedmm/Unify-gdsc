@@ -127,7 +127,7 @@ public class AddPhotosActivity extends AppCompatActivity {
                     myUri2 = "";
 
                 }
-                if (imageUri1 != null && !myUri2.equals("")) {
+                if (imageUri1 != null) {
 
                     upload();
                     lottie = new lottiedialogfragment(AddPhotosActivity.this);
@@ -135,7 +135,7 @@ public class AddPhotosActivity extends AppCompatActivity {
 
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "Please add one photo and avatar", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please add your store logo", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -278,7 +278,7 @@ public class AddPhotosActivity extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         GridLayoutManager staggeredGridLayoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(staggeredGridLayoutManager);
-        adapter = new AvatarsAdapter(this, intrestsArrayList, bottomSheetDialog, img2);
+        adapter = new AvatarsAdapter(this, intrestsArrayList, bottomSheetDialog);
         recyclerView.setAdapter(adapter);
 
         createListOfData(intrestsArrayList, adapter);

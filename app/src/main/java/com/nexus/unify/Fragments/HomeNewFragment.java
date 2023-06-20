@@ -209,13 +209,13 @@ btn_chat.setOnClickListener(new View.OnClickListener() {
         tv_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), MainChatsActivity.class));
+             //   startActivity(new Intent(getContext(), MainChatsActivity.class));
             }
         });
         chats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), ResultActivity.class));
+              //  startActivity(new Intent(getContext(), ResultActivity.class));
             }
         });
         btn_addposts.setOnClickListener(new View.OnClickListener() {
@@ -317,7 +317,7 @@ btn_chat.setOnClickListener(new View.OnClickListener() {
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     Posts posts = postSnapshot.getValue(Posts.class);
 
-                    if (posts.getPrivacy().equals("Career")) {
+                    if (!posts.getPrivacy().equals("Career")) {
 
                         postsList.add(posts);
                         mShimmerViewContainer.stopShimmer();
@@ -445,7 +445,7 @@ btn_chat.setOnClickListener(new View.OnClickListener() {
                                                 startActivity(i);
 
                                             } else if (typ.equals("chat")) {
-                                                startActivity(new Intent(getContext(), MainChatsActivity.class));
+                                              startActivity(new Intent(getContext(), MainChatsActivity.class));
 
                                             } else if (typ.equals("post")) {
                                                 startActivity(new Intent(getContext(), ResultActivity.class));
@@ -480,7 +480,7 @@ btn_chat.setOnClickListener(new View.OnClickListener() {
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     Posts posts = postSnapshot.getValue(Posts.class);
 
-                    if (posts.getPrivacy().equals("Forum")) {
+                    if (!posts.getPrivacy().equals("Forum")) {
 
                         post_cnf_list.add(posts);
                         mShimmerViewContainer.stopShimmer();

@@ -122,7 +122,7 @@ public class AvatarsAdapter extends RecyclerView.Adapter<AvatarsAdapter.MultiVie
     private BottomSheetDialog bottomSheetDialog;
     private RoundedImageView img;
 
-    public AvatarsAdapter(Context context, ArrayList<Avatars> intrests, BottomSheetDialog bottomSheetDialog, RoundedImageView img) {
+    public AvatarsAdapter(Context context, ArrayList<Avatars> intrests, BottomSheetDialog bottomSheetDialog) {
         this.context = context;
         this.intrests = intrests;
         this.bottomSheetDialog = bottomSheetDialog;

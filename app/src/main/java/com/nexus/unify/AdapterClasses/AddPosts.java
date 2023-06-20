@@ -32,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.nexus.unify.ModelClasses.Comment;
 import com.nexus.unify.ModelClasses.Posts;
 import com.nexus.unify.ModelClasses.User;
-import com.nexus.unify.PlayerActivity;
+
 import com.nexus.unify.R;
 
 import java.util.ArrayList;
@@ -56,15 +56,15 @@ public class AddPosts {
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     Posts posts = postSnapshot.getValue(Posts.class);
 
-                    if (posts.getPrivacy().equals(TYP)) {
+
 
                       videoList.add(posts);
 
 
 
-                    } else {
 
-                    }
+
+
 
 
                 }
@@ -112,82 +112,7 @@ public class AddPosts {
         });
     }
 
-    public static void more_btn(PlayerActivity context, View v, Posts videoItem) {
-        FirebaseUser firebaseUser;
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        PopupMenu popupMenu = new PopupMenu(context, v);
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.edit:
-                        editPost(videoItem.getPostid(), context);
-                        return true;
-                    case R.id.delete:
 
-
-                        new iOSDialogBuilder(context)
-                                .setTitle("Confirm Delete!")
-                                .setSubtitle("Are you sure want to delete thsi post?")
-                                .setBoldPositiveLabel(true)
-                                .setCancelable(false)
-                                .setPositiveListener(context.getString(R.string.ok), new iOSDialogClickListener() {
-                                    @Override
-                                    public void onClick(iOSDialog dialog) {
-
-                                        FirebaseDatabase.getInstance().getReference("Posts")
-                                                .child(videoItem.getPostid()).removeValue()
-                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<Void> task) {
-                                                        if (task.isSuccessful()) {
-                                                            Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
-                                                            dialog.dismiss();
-                                                        }
-                                                    }
-                                                });
-                                    }
-                                })
-                                .setNegativeListener(context.getString(R.string.dismiss), new iOSDialogClickListener() {
-                                    @Override
-                                    public void onClick(iOSDialog dialog) {
-                                        dialog.dismiss();
-                                    }
-                                })
-                                .build().show();
-
-                        return true;
-                    case R.id.report:
-
-                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Reports");
-                        HashMap<String, Object> hashMap = new HashMap<>();
-
-                        hashMap.put("postid", videoItem.getPostid());
-                        hashMap.put("user", firebaseUser.getUid());
-                        reference.push().setValue(hashMap);
-                        Toast.makeText(context, "Reported", Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.comment:
-                        ////  showcomments(videoItem.getPostid(), videoItem.getPublisher(), context);
-                        return true;
-                    case R.id.share:
-
-                        return true;
-                    default:
-                        return false;
-                }
-            }
-        });
-        popupMenu.inflate(R.menu.menu_post);
-        popupMenu.getMenu().findItem(R.id.share).setVisible(false);
-        popupMenu.getMenu().findItem(R.id.comment).setVisible(false);
-        if (!videoItem.getPublisher().equals(firebaseUser.getUid())) {
-            popupMenu.getMenu().findItem(R.id.edit).setVisible(false);
-            popupMenu.getMenu().findItem(R.id.delete).setVisible(false);
-        }
-        popupMenu.show();
-
-    }
 
     public static void editPost(String postid, Context context) {
 

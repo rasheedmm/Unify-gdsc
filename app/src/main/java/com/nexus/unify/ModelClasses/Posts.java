@@ -12,10 +12,12 @@ public class Posts implements Serializable {
     private String text;
     private String type;
     private String publisher;
+    private String price
+            ;
 
 
 
-    public Posts(String postid, String privacy, String anms, String url, String text,String type,String publisher) {
+    public Posts(String postid, String privacy, String anms, String url, String text,String type,String publisher,String price) {
         this.postid = postid;
         this.privacy = privacy;
         this.anms = anms;
@@ -23,6 +25,7 @@ public class Posts implements Serializable {
         this.text = text;
         this.type = type;
         this.publisher = publisher;
+        this.price = price;
     }
     public Posts(){
 
@@ -82,6 +85,14 @@ public class Posts implements Serializable {
 
     public void setPublisher(String publisher) {
         this.publisher =publisher;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price =price;
     }
 
 

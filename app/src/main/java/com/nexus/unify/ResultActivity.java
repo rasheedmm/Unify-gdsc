@@ -89,7 +89,7 @@ public class ResultActivity extends AppCompatActivity {
     boolean img = true;
     byte[] finalimage1;
     StorageReference storageReference1, storageReference2;
-    EditText edit;
+    EditText edit,prize;
     private Autocomplete mentionsAutocomplete, hashtagsAutocomplete;
     ArrayAdapter<String> arraylist_adapter;
     AutoCompleteTextView text_type;
@@ -97,6 +97,7 @@ public class ResultActivity extends AppCompatActivity {
     TextView send;
     lottiedialogfragment lottie;
     StorageTask uploadTask;
+
     StorageReference storageReference;
 
     @Override
@@ -113,16 +114,17 @@ public class ResultActivity extends AppCompatActivity {
         posts = new Posts();
         storageReference1 = FirebaseStorage.getInstance().getReference("Posts");
         storageReference = FirebaseStorage.getInstance().getReference("Posts");
-        edit = findViewById(R.id.titleBox);
+        edit = findViewById(R.id.ed_price);
         text_type = findViewById(R.id.txt_edu_level);
         send = findViewById(R.id.imageView12);
+       prize = findViewById(R.id.titleBoxdesc2);
         sw = findViewById(R.id.switch1);
         arraylist_types = new ArrayList<>();
-        arraylist_types.add("Career");
-        arraylist_types.add("Events");
-        arraylist_types.add("Forum");
-        arraylist_types.add("Vacancies");
-        arraylist_types.add("Courses");
+        arraylist_types.add("Home Bakers");
+        arraylist_types.add("Handicrafts");
+        arraylist_types.add("Ayurvedic products");
+        arraylist_types.add("Home Made");
+
 
         arraylist_adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item_layout, arraylist_types);
         text_type.setAdapter(arraylist_adapter);
@@ -159,7 +161,7 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (text_type.getText().toString().equals("")) {
-                    Toast.makeText(ResultActivity.this, "Please choose privacy", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResultActivity.this, "Please choose Product Category", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -201,6 +203,7 @@ public class ResultActivity extends AppCompatActivity {
                                         hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
                                         hashMap.put("url", "null");
                                         hashMap.put("text", edit.getText().toString());
+                                        hashMap.put("price", prize.getText().toString());
                                         reference.child(postid).setValue(hashMap);
                                         lottie.dismiss();
 
@@ -227,7 +230,7 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     private void setupMentionsAutocomplete() {
-        edit = findViewById(R.id.titleBox);
+        edit = findViewById(R.id.ed_price);
         float elevation = 6f;
         Drawable backgroundDrawable = new ColorDrawable(Color.WHITE);
         AutocompletePolicy policy = new CharPolicy('@'); // Look for @mentions
@@ -263,7 +266,7 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     private void setupHashTagAutocomplete() {
-        edit = findViewById(R.id.titleBox);
+        edit = findViewById(R.id.ed_price);
         float elevation = 6f;
         Drawable backgroundDrawable = new ColorDrawable(Color.WHITE);
         AutocompletePolicy policy = new CharPolicy('#'); // Look for hashtags
@@ -401,5 +404,4 @@ public class ResultActivity extends AppCompatActivity {
                     // Use ImagePicker.Companion.getError(result.getData()) to show an error
                 }
             });
-
 }

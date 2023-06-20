@@ -54,9 +54,9 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
 public class EditProfileActivity extends AppCompatActivity {
-    EditText username, name, bio, anms_username;
+    EditText username, name, bio;
 
-    RoundedImageView image_profile, image_anmsprfl;
+    RoundedImageView image_profile;
     FirebaseUser firebaseUser;
     StorageReference storageReference;
     Uri imageUri;
@@ -72,8 +72,7 @@ public class EditProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
         username = findViewById(R.id.contact);
         getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        anms_username = findViewById(R.id.anms_username);
-        image_anmsprfl = findViewById(R.id.image_profile_anm);
+
         save = findViewById(R.id.btn_submit);
         name = findViewById(R.id.name);
         bio = findViewById(R.id.desc);
@@ -91,8 +90,8 @@ public class EditProfileActivity extends AppCompatActivity {
                 username.setText(user.getUsername());
                 bio.setText(user.getBio());
                 name.setText(user.getName());
-                anms_username.setText(user.getAnmsname());
-                Glide.with(getApplicationContext()).load(user.getAnmsimg()).into(image_anmsprfl);
+
+
                 Glide.with(getApplicationContext()).load(user.getImg1()).into(image_profile);
             }
 
@@ -102,12 +101,7 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
 
-        image_anmsprfl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showcomments();
-            }
-        });
+
         image_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,23 +131,21 @@ public class EditProfileActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Enter username", Toast.LENGTH_SHORT).show();
                 } else if (name.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "Enter your name", Toast.LENGTH_SHORT).show();
-                } else if (anms_username.getText().toString().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Enter Anonymous Id", Toast.LENGTH_SHORT).show();
                 } else {
-                    updateProfile(username.getText().toString(), name.getText().toString(), bio.getText().toString(), anms_username.getText().toString());
+                    updateProfile(username.getText().toString(), name.getText().toString(), bio.getText().toString());
                 }
             }
         });
     }
 
-    private void updateProfile(String username, String name, String bio, String anmsusername) {
+    private void updateProfile(String username, String name, String bio) {
         SharedPreferences sh = getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
         String anmsimg = sh.getString("anmsimg", "");
         reference1 = FirebaseDatabase.getInstance().getReference("profiles").child(firebaseUser.getUid());
         HashMap<String, Object> hashMap1 = new HashMap<>();
         hashMap1.put("username", username.toLowerCase());
         hashMap1.put("name", name);
-        hashMap1.put("anmsname", anmsusername);
+
         hashMap1.put("bio", bio);
         hashMap1.put("anmsimg", anmsimg);
         reference1.updateChildren(hashMap1).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -250,7 +242,7 @@ public class EditProfileActivity extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(staggeredGridLayoutManager);
-        adapter = new AvatarsAdapter(this, intrestsArrayList, bottomSheetDialog, image_anmsprfl);
+        adapter = new AvatarsAdapter(this, intrestsArrayList, bottomSheetDialog);
         recyclerView.setAdapter(adapter);
 
         createListOfData(intrestsArrayList, adapter);

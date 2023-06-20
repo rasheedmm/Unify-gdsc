@@ -49,24 +49,24 @@ class SwipeAdapter(
         //  holder.binding.tvIntrests.text = list[position].intrests
 
         holder.binding.imageView10.setOnClickListener {
-            StrikeClick.add(
+        /*    StrikeClick.add(
                 holder.binding.imageView10,
                 list[position].uid,
                 list[position].name,
                 list[position].img1,
                 list[position].token
             )
-
+*/
         }
         holder.binding.imageView4.setOnClickListener {
 
-            StrikeClick.report(list[position].uid, holder.binding.imageView4)
+           // StrikeClick.report(list[position].uid, holder.binding.imageView4)
 
         }
 
         holder.binding.imageclose.setOnClickListener {
 
-
+/*
             val setting = SwipeAnimationSetting.Builder()
 
                 .setDirection(Direction.Left)
@@ -77,14 +77,14 @@ class SwipeAdapter(
             manager.setSwipeAnimationSetting(setting)
             cardView.swipe()
 
-
+*/
         }
         Glide.with(context).load(list[position].img1).into(holder.binding.itemImage)
         holder.binding.imageView9.setOnClickListener {
 
 
 
-            StrikeClick.like(holder.binding.imageView10, list[position].uid)
+         /*   StrikeClick.like(holder.binding.imageView10, list[position].uid)
 
             Handler().postDelayed({
                 val setting = SwipeAnimationSetting.Builder()
@@ -99,7 +99,7 @@ class SwipeAdapter(
 
             }, 1000)
 
-
+*/
         }
     }
 

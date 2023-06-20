@@ -13,6 +13,9 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation" />
+    <uses-permission
         android:name="android.permission.POST_NOTIFICATIONS"
         tools:node="remove" />
 
@@ -27,9 +30,33 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".VideoPlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.VideoActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.nexus.PayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.ContentDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MembershipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SharedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UrlActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadVideoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChatsAnmsNewActivity"
-            android:theme="@style/Theme.Darkn"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.Darkn">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -217,7 +244,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="latticeapp.page.link"
+                    android:host="bookease.page.link"
                     android:scheme="https" />
             </intent-filter>
 
@@ -225,6 +252,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileProvider"
@@ -234,6 +262,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/chaticon" />
@@ -248,12 +277,12 @@
             android:value="smart_reply" /> <!-- To use multiple models: android:value="smart_reply,model2,model3" -->
         <service
             android:name=".notifications.ChatMessagingService"
-            android:permission="com.google.android.c2dm.permission.SEND"
             android:enabled="true"
-            android:exported="false">
+            android:exported="false"
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
 

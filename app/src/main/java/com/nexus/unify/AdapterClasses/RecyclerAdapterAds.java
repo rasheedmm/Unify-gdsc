@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.nexus.unify.ModelClasses.Ads;
-import com.nexus.unify.PlayerActivity;
+
 import com.nexus.unify.R;
 
 import java.util.List;
@@ -88,13 +88,13 @@ public class RecyclerAdapterAds extends RecyclerView.Adapter {
                         return;
                     }else {
                         try {
-                            Intent i = new Intent(context, PlayerActivity.class);
+                        /*    Intent i = new Intent(context, PlayerActivity.class);
                             SharedPreferences.Editor editor = context.getSharedPreferences("MY", MODE_PRIVATE).edit();
                             editor.putInt("pos", position+1);
 
                             editor.apply();
                             i.putExtra("pos", position+1);
-                            context.startActivity(i);
+                            context.startActivity(i);*/
                         }catch (Exception e){
 
 
@@ -126,13 +126,13 @@ public class RecyclerAdapterAds extends RecyclerView.Adapter {
                     }else {
 
                         try {
-                            Intent i = new Intent(context, PlayerActivity.class);
+                          /*  Intent i = new Intent(context, PlayerActivity.class);
                             SharedPreferences.Editor editor = context.getSharedPreferences("MY", MODE_PRIVATE).edit();
                             editor.putInt("pos", position+1);
 
                             editor.apply();
                             i.putExtra("pos", position+1);
-                            context.startActivity(i);
+                            context.startActivity(i);*/
                         }catch (Exception e){
 
 

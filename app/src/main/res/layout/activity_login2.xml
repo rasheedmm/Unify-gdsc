@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserratsemibold"
-        android:text="Lattice"
+        android:text="BOOK EASE"
         android:textColor="@color/text_color_white"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"

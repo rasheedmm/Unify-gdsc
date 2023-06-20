@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_color"
+    android:background="@color/app_white"
     tools:context=".WelcomeActivity">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -14,7 +14,7 @@
         android:layout_centerInParent="true"
         app:lottie_loop="true"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="clg.json"
+        app:lottie_fileName="selling.json"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/montserratsemibold"
-        android:text="Unify"
-        android:textColor="@color/text_color_white"
+        android:text="BOOK EASE"
+        android:textColor="@color/text_color"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,8 +52,8 @@
         android:fontFamily="@font/montserratmedium"
         android:layout_marginBottom="16dp"
         android:gravity="center"
-        android:text="Your All-in-One Companion for College Life!"
-        android:textColor="@color/text_color_white"
+        android:text="Your All-in-One Platform!"
+        android:textColor="@color/text_color"
         app:layout_constraintBottom_toTopOf="@+id/getStarted"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView" />

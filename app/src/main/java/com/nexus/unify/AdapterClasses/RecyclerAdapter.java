@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.nexus.unify.ModelClasses.Posts;
-import com.nexus.unify.PlayerActivity;
+
 import com.nexus.unify.R;
 
 
@@ -87,6 +87,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             Glide.with(context).load(moviesList.get(position).getUrl())
                     .placeholder(R.drawable.post_place)
                     .into(viewHolderOne.imageView);
+            viewHolderOne.price.setText("₹"+moviesList.get(position).getPrice());
+            viewHolderOne.textView.setText(moviesList.get(position).getText());
 
 
             viewHolderOne.cardView.setOnClickListener(new View.OnClickListener() {
@@ -95,41 +97,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
                     if (context==null){
                         return;
                     }else {
-                        try {
-                            try {
-                                Intent i = new Intent(context, PlayerActivity.class);
-                                SharedPreferences.Editor editor = context.getSharedPreferences("MY", MODE_PRIVATE).edit();
-                                editor.putInt("pos", position + 1);
 
-
-
-
-
-                                String type = moviesList.get(position).getPrivacy();
-
-                                if (type.equals("Career")) {
-                                  editor.putString("name","Career");
-
-                                } else if (type.equals("Forum")) {
-                                    editor.putString("name","Forum");
-
-                                } else if (type.equals("Events")) {
-                                    editor.putString("name","Events");
-
-                                } else if (type.equals("Courses")) {
-                                    editor.putString("name","Courses");
-
-                                }
-                                editor.apply();
-                                context.startActivity(i);
-                            } catch (Exception e) {
-
-
-                            }
-                        }catch (Exception e){
-
-
-                        }
 
 
                     }
@@ -140,6 +108,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
                 viewHolderOne.imageView.setVisibility(View.GONE);
                 viewHolderOne.textView.setVisibility(View.VISIBLE);
                 viewHolderOne.textView.setText(moviesList.get(position).getText());
+                viewHolderOne.price.setText(moviesList.get(position).getPrice());
             }else {
 
             }
@@ -157,30 +126,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
                     }else {
 
                         try {
-                            try {
-                                Intent i = new Intent(context, PlayerActivity.class);
-                                SharedPreferences.Editor editor = context.getSharedPreferences("MY", MODE_PRIVATE).edit();
-                                editor.putInt("pos", position + 1);
 
-                                editor.apply();
-                                i.putExtra("pos", position + 1);
-
-                                String type = moviesList.get(position).getPrivacy();
-
-                                if (type.equals("Career")) {
-                                    i.putExtra("tag", "Career");
-                                } else if (type.equals("Forum")) {
-                                    i.putExtra("tag", "Forum");
-                                } else if (type.equals("Events")) {
-                                    i.putExtra("tag", "Events");
-                                } else if (type.equals("Courses")) {
-                                    i.putExtra("tag", "Courses");
-                                }
-                                context.startActivity(i);
-                            } catch (Exception e) {
-
-
-                            }
                         }catch (Exception e){
 
 
@@ -209,7 +155,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
 
         ImageView imageView;
-        TextView textView;
+        TextView textView,price;
         CardView cardView;
 
         public ViewHolderOne(@NonNull View itemView) {
@@ -218,6 +164,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
             imageView = itemView.findViewById(R.id.imageView);
             textView = itemView.findViewById(R.id.text_desc);
             cardView = itemView.findViewById(R.id.view2);
+            price= itemView.findViewById(R.id.prize);
 
         }
     }

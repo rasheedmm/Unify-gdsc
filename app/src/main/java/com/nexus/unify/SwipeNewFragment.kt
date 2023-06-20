@@ -199,8 +199,8 @@ class SwipeNewFragment : Fragment() {
         manager.setScaleInterval(0.8f)
         manager.setMaxDegree(40.0f)
         manager.setDirections(Direction.HORIZONTAL)
-        manager.setStackFrom(StackFrom.Bottom)
-        manager.setVisibleCount(5)
+        manager.setStackFrom(StackFrom.None)
+
 
     }
 
@@ -237,9 +237,7 @@ class SwipeNewFragment : Fragment() {
                                 if (currentFirebaseUser != null) {
 
 
-                                    if (model.uid != currentFirebaseUser.uid && model.name != null && StrikeClick.check(
-                                            intrests, model.intrests, context
-                                        ) == false
+                                    if (model.uid != currentFirebaseUser.uid && model.name != null
                                     ) {
                                         list.add(model!!)
                                         binding.shimmerViewContainer.stopShimmer()

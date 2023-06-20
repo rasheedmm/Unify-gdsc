@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">Unify</string>
+    <string name="app_name">BookEase</string>
 
     //new
+    <string name="track_selection_title">Select tracks</string>
+    <string name="error_unsupported_video">error_unsupported_video</string>
+    <string name="error_unsupported_audio">error_unsupported_audio</string>
     <string name="privacy_string">I accept the </string>
-    <string name="user_agreement_and_privacy_policy">Unify terms and conditions</string>
+    <string name="user_agreement_and_privacy_policy">Bookease terms and conditions</string>
     <string name="title_activity_player">PlayerActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -130,5 +133,8 @@
     <string name="failed_to_fetch_friend_list">Failed to fetch friends list : %1$s</string>
     <string name="failed_to_save_device_token">Failed to save device token : $1%s</string>
     <string name="failed_to_send_notification">Failed to send notification : %1$s</string>
+
+
+
 
 </resources>

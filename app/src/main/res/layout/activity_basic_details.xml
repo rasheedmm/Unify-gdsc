@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_color"
+    android:background="@color/app_white"
     tools:context=".BasicDetailsActivity">
 
     <LinearLayout
@@ -17,20 +17,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Basics"
             android:fontFamily="@font/montserratmedium"
+            android:text=""
             android:textColor="@color/text_color_white"
             android:textSize="20sp"></TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Introduce, \nYourSelf"
-            android:textColor="@color/text_color_white"
-            android:textSize="27sp"
             android:fontFamily="@font/montserratsemibold"
+            android:text="Store, \nDetails"
+            android:textColor="@color/text_color"
+            android:textSize="27sp"
             android:textStyle="bold"></TextView>
-
 
 
         <LinearLayout
@@ -45,22 +44,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:fontFamily="@font/montserratmedium"
-                android:text="Full Name"
-                android:textColor="@color/text_color_white"
+                android:text="Store Name"
+                android:textColor="@color/text_color"
                 android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/transparent"
+                android:backgroundTint="@color/bg_rate_selected"
                 android:fontFamily="@font/montserratmedium"
-                android:hint="Enter Name"
+                android:hint="Enter Store Name"
                 android:paddingVertical="5dp"
                 android:singleLine="true"
 
-                android:textColor="@color/text_color_white"
-                android:textColorHint="@color/text_color_white"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
                 android:textCursorDrawable="@drawable/edittext_cursor" />
 
             <View
@@ -72,7 +71,6 @@
         </LinearLayout>
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -85,8 +83,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:fontFamily="@font/montserratmedium"
-                android:text="User Name"
-                android:textColor="@color/text_color_white"
+                android:text="Location"
+                android:textColor="@color/text_color"
                 android:textSize="15sp" />
 
             <EditText
@@ -95,12 +93,12 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/transparent"
                 android:fontFamily="@font/montserratmedium"
-                android:hint="Enter UserName"
+                android:hint="Enter Location"
                 android:paddingVertical="5dp"
                 android:singleLine="true"
 
-                android:textColor="@color/text_color_white"
-                android:textColorHint="@color/text_color_white"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
                 android:textCursorDrawable="@drawable/edittext_cursor" />
 
             <View
@@ -121,91 +119,31 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:background="@color/app_color"
             android:backgroundTint="@color/app_color"
-            app:boxBackgroundColor="@color/app_color"
-            android:textColorHint="@color/text_color_white"
-            android:layout_marginRight="8dp"
             android:outlineAmbientShadowColor="@color/hint_text"
-            app:hintTextColor="@color/text_color_white"
+            android:textColorHint="@color/text_color_white"
+            app:boxBackgroundColor="@color/app_color"
             app:endIconTint="@color/text_color_white"
-            app:startIconTint="@color/text_color_white"
+            app:hintTextColor="@color/text_color_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:startIconDrawable="@drawable/education_svgrepo_com">
+            app:startIconDrawable="@drawable/category_svgrepo_com"
+            app:startIconTint="@color/text_color_white">
 
             <AutoCompleteTextView
                 android:id="@+id/crs"
-                android:textColorHint="@color/text_color_white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Select Course"
                 android:fontFamily="@font/montserratmedium"
+                android:hint="Select Store Type"
                 android:inputType="none"
-                android:textColor="@color/text_color_white" />
+                android:textColor="@color/text_color_white"
+                android:textColorHint="@color/text_color_white" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_dep"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="8dp"
-            app:boxBackgroundColor="@color/app_color"
-            android:layout_marginRight="8dp"
-            app:endIconTint="@color/text_color_white"
-            app:startIconTint="@color/text_color_white"
-            android:textColorHint="@color/text_color_white"
-            app:hintTextColor="@color/text_color_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:startIconDrawable="@drawable/category_svgrepo_com__1_">
-
-            <AutoCompleteTextView
-                android:id="@+id/deprts"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Select Department"
-                android:inputType="none"
-                android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/text_color_white" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_i_am"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="8dp"
-            app:boxBackgroundColor="@color/app_color"
-            android:layout_marginRight="8dp"
-            app:endIconTint="@color/text_color_white"
-            app:startIconTint="@color/text_color_white"
-            android:textColorHint="@color/text_color_white"
-            app:hintTextColor="@color/text_color_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:startIconDrawable="@drawable/category_svgrepo_com__1_">
-
-            <AutoCompleteTextView
-                android:id="@+id/i_am"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="I am a"
-                android:inputType="none"
-                android:fontFamily="@font/montserratmedium"
-                android:textColor="@color/text_color_white" />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"

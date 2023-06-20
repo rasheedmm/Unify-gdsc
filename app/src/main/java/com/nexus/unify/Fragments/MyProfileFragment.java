@@ -34,6 +34,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.dynamiclinks.DynamicLink;
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
 import com.google.firebase.dynamiclinks.ShortDynamicLink;
+import com.live.newvideocall.kotlin.Swipe;
+import com.nexus.PayoutActivity;
 import com.nexus.unify.AdapterClasses.RecyclerAdapter;
 import com.nexus.unify.AddPhotosActivity;
 import com.nexus.unify.BasicDetailsActivity;
@@ -42,7 +44,11 @@ import com.nexus.unify.ModelClasses.Posts;
 import com.nexus.unify.ModelClasses.User;
 import com.nexus.unify.R;
 import com.nexus.unify.SettingsActivity;
+import com.nexus.unify.UrlActivity;
+import com.nexus.unify.kotlin.MyKotlinKt;
 
+
+import org.checkerframework.checker.fenum.qual.SwingBoxOrientation;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -95,7 +101,7 @@ public class MyProfileFragment extends Fragment {
         userInfo();
         recyclerAdapter = new RecyclerAdapter(postsList, getContext());
 
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
 
         recyclerView.setAdapter(recyclerAdapter);
         addPosts();
@@ -129,67 +135,48 @@ public class MyProfileFragment extends Fragment {
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //createDynamicLink();
+                createlink();
             }
         });
-
 
         btn_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), SettingsActivity.class));
+                startActivity(new Intent(getContext(), UrlActivity.class));
             }
         });
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), EditProfileActivity.class));
+             startActivity(new Intent(getContext(), PayoutActivity.class));
             }
         });
         btn_edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), EditProfileActivity.class));
+              //  startActivity(new Intent(getContext(), EditProfileActivity.class));
             }
         });
         return view;
     }
 
-    public void createDynamicLink() {
-        DynamicLink dynamicLink = FirebaseDynamicLinks.getInstance().createDynamicLink()
-                .setLink(Uri.parse("https://example.com/"))
-                .setDomainUriPrefix("https://latticeapp.page.link")
-                // Open links with this app on Android
-                .setAndroidParameters(
-                        new DynamicLink.AndroidParameters.Builder("com.example.referearnfirebase")
-                                .setMinimumVersion(25)
-                                .build())
-                //.setAndroidParameters(new DynamicLink.AndroidParameters.Builder().build())
-                // Open links with com.example.ios on iOS
-                .setIosParameters(new DynamicLink.IosParameters.Builder("com.example.ios").build())
-                .buildDynamicLink();
 
-        Uri dynamicLinkUri = dynamicLink.getUri();
 
-        Log.e("main", "  Long refer " + dynamicLink.getUri());
+    public void createlink() {
 
-        createReferlink("Rahul");
-
-    }
-
-    public void createReferlink(String user) {
         // manuall link
-        String sharelinktext = "https://latticeapp.page.link/?" +
-                "&apn=" + getActivity().getPackageName() +
-                "&st=" + "Download LPNT App & Get Rewarded" +
-                "&sd=" + "Reward : 1 LPNT Token" +
-                "&si=" + "https://static.news.bitcoin.com/wp-content/uploads/2021/02/8EHoA6aN-lpnt-is-live1280.jpg";
-
-        Log.e("mainactivity", "sharelink - " + sharelinktext);
-        // shorten the link
+        String sharelinktext  = "https://bookease.page.link/?"+
+                "link=http://www.malluhub.tk/myrefer.php?custid="+firebaseUser.getUid()+"-"+"456"+
+                "&apn="+ getActivity().getPackageName()+
+                "&st="+"BOOK EASE App"+
+                "&sd="+"Shared"+
+                "&si="+"https://www.pngitem.com/pimgs/m/215-2157237_transparent-celebration-vector-png-transparent-celebration-ribbon-png.png";
         Task<ShortDynamicLink> shortLinkTask = FirebaseDynamicLinks.getInstance().createDynamicLink()
-                //.setLongLink(dynamicLink.getUri())    // enable it if using firebase method dynamicLink
-                .setLongLink(Uri.parse(sharelinktext))  // manually
+                .setLink(Uri.parse(sharelinktext))
+                .setDomainUriPrefix("https://bookease.page.link")
+
+                // Set parameters
+                // ...
                 .buildShortDynamicLink()
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<ShortDynamicLink>() {
                     @Override
@@ -198,26 +185,28 @@ public class MyProfileFragment extends Fragment {
                             // Short link created
                             Uri shortLink = task.getResult().getShortLink();
                             Uri flowchartLink = task.getResult().getPreviewLink();
-                            Log.e("main ", "short link " + shortLink.toString());
-                            // share app dialog
-                            Intent intent = new Intent();
-                            intent.setAction(Intent.ACTION_SEND);
-                            intent.putExtra(Intent.EXTRA_TEXT, shortLink.toString());
+
+                            final Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                            String shareMessage = String.valueOf(shortLink);
+                            intent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                             intent.setType("text/plain");
-                            startActivity(intent);
-
-
+                            startActivity(Intent.createChooser(intent, "Share  via"));
                         } else {
                             // Error
                             // ...
-                            Toast.makeText(getContext(), task.getException()+"", Toast.LENGTH_SHORT).show();
-                            Log.e("main", " error " + task.getException());
-
                         }
                     }
                 });
 
+
+
+
+
+
+
+
     }
+
 
 
 

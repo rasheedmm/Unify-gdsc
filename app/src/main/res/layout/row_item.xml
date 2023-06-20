@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/view2"
-    android:layout_width="180dp"
-    android:layout_height="240dp"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
     android:layout_centerHorizontal="true"
     android:layout_margin="3dp"
     android:layout_marginStart="8dp"
@@ -13,7 +13,7 @@
     android:innerRadius="0dp"
     android:shape="ring"
     android:thicknessRatio="1.9"
-    app:cardBackgroundColor="@color/light_bg"
+    app:cardBackgroundColor="@color/app_color"
     app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,32 +22,55 @@
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_margin="4dp"
             android:scaleType="centerCrop"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:riv_corner_radius="10dip" />
+
+        <TextView
+            android:id="@+id/prize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/prize_tag"
+            android:padding="8dp"
+            android:text="₹466"
+            android:textColor="@color/text_color_white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_desc" />
+
+        <TextView
+            android:id="@+id/buynow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/buy_tag"
+            android:padding="8dp"
+            android:text="Buy Now"
+            android:textColor="@color/text_color_white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/prize" />
 
         <TextView
             android:id="@+id/text_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:fontFamily="@font/montserratregular"
             android:maxLines="11"
             android:padding="8dp"
             android:textAlignment="textStart"
             android:textColor="@color/text_color_white"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintTop_toTopOf="parent"></TextView>
 

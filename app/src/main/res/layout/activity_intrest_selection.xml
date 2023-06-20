@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_color"
+    android:background="@color/app_white"
     tools:context=".IntrestSelectionActivity">
 
 
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@drawable/btn_stroke_only"
-        android:text="Lets Go"
+        android:text="Finish"
         android:textColor="@color/text_color_white"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="@+id/multiple_rv"
@@ -40,9 +40,9 @@
         android:layout_height="wrap_content"
 
         android:layout_marginBottom="16dp"
-        android:text="Please select atleast 5 intrests"
+        android:text="Please select atleast 5 products youre intrested"
         android:textAlignment="center"
-        android:textColor="@color/text_color_white"
+        android:textColor="@color/text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_submit"
         app:layout_constraintStart_toStartOf="@+id/btn_submit" />

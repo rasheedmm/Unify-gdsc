@@ -12,15 +12,18 @@
 
 
     //custom colors
-    <color name="app_color">#101010</color>
-    <color name="light_bg">#18181C</color>
+    <color name="app_color">#FFFFFF</color>
+    <color name="light_bg">#2E2E2E</color>
     <color name="blue_main">#6177F3</color>
-    <color name="blue_icon">#CDE9FF</color>
+    <color name="blue_icon">#D6EDFF</color>
     <color name="searchbar_color">#0D0E0F</color>
     <color name="dark_blue">#0188D1</color>
     <color name="hint_text">#DAFFFFFF</color>
     <color name="text_color">#363e3f</color>
     <color name="text_color_white">#DAE5EA</color>
+    <color name="bg_grey">#808080</color>
+    <color name="app_white">#FFFFFF</color>
+    <color name="bg_white">#575757</color>
 
     <color name="icon_color">#9E9FA0</color>
     <color name="bg_rate_selected">#F8F8F8</color>
@@ -34,4 +37,5 @@
     <color name="green">#00ff00</color>
     <color name="grey">#757575</color>
     <color name="blue">#00FFFF</color>
+    <color name="bg_color">#fbfaff</color>
 </resources>
